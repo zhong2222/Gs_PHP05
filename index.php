@@ -40,7 +40,7 @@ if ($status == false) {
             <!-- <li><h4><a href="logout.php">ログアウト</a></h4></li> -->
         </ul>
         
-        <form action="insert.php" method="post">
+        <!-- <form action="insert.php" method="post">
 
         <label> 書名：  <input id="title" type="text" class="box" name="title"></label><br>
         <label> 著者：  <input id="author" type="text" class="box" name="author"></label><br>
@@ -60,12 +60,12 @@ if ($status == false) {
                         <div class="option"> ◯：よい。だめではないが今一つ</div>
                         <div class="option"> △：微妙。買わなければよかった、読まなければよかった</div>
                         <div class="option"> ✕：最悪。ひどい本、あきれた</div>
-                </ul>
+                </ul> -->
 
                         <!-- 画像表示 -->
                         <div id="thumbnail"></div>
 
-                <h4>↓↓↓アクション↓↓↓</h4>
+                <!-- <h4>↓↓↓アクション↓↓↓</h4>
 
                 <p id="purpuse">1.　この本を読んだ目的、ねらい</p>
                     <textArea name="purpuse" rows="8" cols="40"></textArea><br>
@@ -77,7 +77,7 @@ if ($status == false) {
                     <textArea name="plan" rows="8" cols="40"></textArea><br>
                 <input type="submit" value="登録">
 
-        </form>
+        </form> -->
 
     </main>
 
