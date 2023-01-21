@@ -1,62 +1,22 @@
 <?php
 session_start();
 require_once('funcs.php');
-loginCheck();
 
-$title = '';
-$author = '';
-$url = '';
-$start = '';
-$end = '';
-$evaluate = '';
-$purpuse = '';
-$thoughts = '';
-$action = '';
-$plan = '';
+$pdo = db_conn();
+$stmt = $pdo->prepare('SELECT * FROM gs_bm_table');
+$status = $stmt->execute();
 
-if (isset($_SESSION['post']['title'])) {
-    $title = $_SESSION['post']['title'];
+$view = '';
+if ($status == false) {
+    sql_error($stmt);
+} else {
+    $contents = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
-
-if (isset($_SESSION['post']['author'])) {
-    $author = $_SESSION['post']['author'];
-}
-
-if (isset($_SESSION['post']['url'])) {
-    $url = $_SESSION['post']['url'];
-}
-
-if (isset($_SESSION['post']['start'])) {
-    $start = $_SESSION['post']['start'];
-}
-
-if (isset($_SESSION['post']['end'])) {
-    $end = $_SESSION['post']['end'];
-}
-
-if (isset($_SESSION['post']['evaluate'])) {
-    $evaluate = $_SESSION['post']['evaluate'];
-}
-
-if (isset($_SESSION['post']['purpuse'])) {
-    $purpuse = $_SESSION['post']['purpuse'];
-}
-
-if (isset($_SESSION['post']['thoughts'])) {
-    $thoughts = $_SESSION['post']['thoughts'];
-}
-
-if (isset($_SESSION['post']['action'])) {
-    $action = $_SESSION['post']['action'];
-}
-
-if (isset($_SESSION['post']['plan'])) {
-    $plan = $_SESSION['post']['plan'];
-}
-
 ?>
 
+
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
@@ -75,12 +35,12 @@ if (isset($_SESSION['post']['plan'])) {
         <h3>～1日30分でも自分を変える”行動読書”！～ </h3>
 
         <ul>
-            <li><h4><a href="select.php">登録内容一覧</a></h4></li>
-            <li><h4><a href="login.php">ログイン</a></h4></li>
-            <li><h4><a href="logout.php">ログアウト</a></h4></li>
+            <!-- <li><h4><a href="select.php">登録内容一覧</a></h4></li> -->
+            <li><h4><a href="admin/login.php">ログイン</a></h4></li>
+            <!-- <li><h4><a href="logout.php">ログアウト</a></h4></li> -->
         </ul>
         
-        <form action="confirm.php" method="post">
+        <form action="insert.php" method="post">
 
         <label> 書名：  <input id="title" type="text" class="box" name="title"></label><br>
         <label> 著者：  <input id="author" type="text" class="box" name="author"></label><br>
@@ -115,7 +75,7 @@ if (isset($_SESSION['post']['plan'])) {
                     <textArea name="action" rows="8" cols="40"></textArea><br>
                 <p id="plan">4.　3か月後に何をするか、どうなっていたいか</p>
                     <textArea name="plan" rows="8" cols="40"></textArea><br>
-                <input type="submit" id="confirm" value="内容確認">
+                <input type="submit" value="登録">
 
         </form>
 
