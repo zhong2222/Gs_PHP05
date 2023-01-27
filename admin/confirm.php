@@ -36,7 +36,7 @@ $_SESSION['post']['plan'] = $_POST['plan'];
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <script src="js/jquery-2.1.3.min.js"></script>
-    <link rel="stylesheet" href="css/bm.css">
+    <link rel="stylesheet" href="../css/bm.css">
     <title>ACTION READING</title>
 
 </head>
