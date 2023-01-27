@@ -61,7 +61,7 @@ if (isset($_SESSION['post']['plan'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <script src="js/jquery-2.1.3.min.js"></script>
-    <link rel="stylesheet" href="css/bm.css">
+    <link rel="stylesheet" href="../css/bm.css">
     <title>ACTION READING</title>
 
 </head>
@@ -142,7 +142,7 @@ if (isset($_SESSION['post']['plan'])) {
     </div>
 
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
-<script src="js/bm.js"></script>
+<script src="../js/bm.js"></script>
 
 </body>
 </html>
